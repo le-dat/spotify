@@ -98,11 +98,7 @@ const TopPlay = () => {
           className="mt-4"
         >
           {topCharts.map((artist) => (
-            <SwiperSlide
-              key={artist?.key}
-              style={{ width: "25%", height: "auto" }}
-              className="shadow-lg rounded-full animate-spin"
-            >
+            <SwiperSlide key={artist?.key} style={{ width: "25%", height: "auto" }} className="shadow-lg rounded-full">
               <Link to={`/artists/${artist?.artists[0].adamid}`}>
                 <img src={artist?.images?.background} alt="artist" className="rounded-full w-full object-cover" />
               </Link>

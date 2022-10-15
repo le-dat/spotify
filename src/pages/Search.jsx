@@ -10,9 +10,7 @@ const Search = () => {
   const { searchTerm } = useParams();
   const { isPlaying, activeSong } = useSelector((state) => state.player);
   const { data, isFetching, isError } = useGetSongBySearchQuery({ searchTerm });
-
   const songs = data?.tracks?.hits?.map((song) => song.track);
-  console.log(songs);
 
   if (isFetching) return <Loader title={`Searching ${searchTerm} ...`} />;
   if (isError) return <Error />;
